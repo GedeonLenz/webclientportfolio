@@ -2,52 +2,189 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Gedeon Lenz - Portfolio</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
-        <span id="initials">GL</span>
-        <nav>
+        <div class="initials">GL</div>
+        <script>
+            /*Necessary for burger menu to work. Burger menu part of task...*/
+            function toggleMenu() {
+                document.getElementById('topnav').classList.contains('activeNav') ? hideMenu() : showMenu()
+            }
+            function showMenu() {
+                document.getElementById('topnav').classList.add('activeNav')
+            }
+            function hideMenu() {
+                document.getElementById('topnav').classList.remove('activeNav');
+            }
+        </script>
+        <img onclick="toggleMenu()" id="menu" width="20" height="20" alt="menu icon" src="./res/icons/menu.svg">
+        <nav id="topnav">
             <ul>
-                <li class="nav-item selected"><a href="#home">Home</a></li>
-                <li class="nav-item"><a href="#aboutme">About me</a></li>
-                <li class="nav-item"><a href="#projects">Projects</a></li>
-                <li class="nav-item"><a href="#contact">Contact me</a></li>
+                <li onclick="hideMenu()" class="nav-item"><a href="#home">Home</a></li>
+                <li onclick="hideMenu()" class="nav-item"><a href="#aboutme">About me</a></li>
+                <li onclick="hideMenu()" class="nav-item"><a href="#projects">Projects</a></li>
+                <li onclick="hideMenu()" class="nav-item"><a href="#contact">Contact me</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="home">
-            <div id="parallax-image-background-container">
-                <div id="welcome" class="content-container">
-                    <span id="greeting">Hello I am</span>
-                    <h1 id="name"><span id="coloredName">Gedeon</span> Lenz</h1>
-                    <p id="welcome-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                    <ul class="social-media">
-                        <li><a href="https://instagram.com/gedeonlenz" target="_blank"><img width="30" height="30" src="./res/icons/instagram.svg"></a></li>
-                        <li><a href="https://twitter.com/gedeonlenz" target="_blank"><img width="30" height="30" src="./res/icons/x.svg"></a></li>
-                        <li><a href="https://facebook.com/gedeonlenz" target="_blank"><img width="30" height="30" src="./res/icons/facebook.svg"></a></li>
-                        <li><a href="https://www.linkedin.com/in/gedeonlenz" target="_blank"><img width="30" height="30" src="./res/icons/linkedin.svg"></a></li>
-                        <li><a href="https://github.com/GedeonLenz" target="_blank"><img width="30" height="30" src="./res/icons/github.svg"></a></li>
-                        <li><a href="mailto:trash@gedeonlenz.com?subject=%5BPortfolio%5D%20Request"><img width="30" height="30" src="./res/icons/mail.svg"></a></li>
-                    </ul>
-                </div>
-                <!--Image src: https://unsplash.com/photos/girl-using-desktop-computer-in-room-CZ9AjMGKIFI?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash-->
+        <section id="home" class="parallax-image-background-container">
+            <div id="welcome" class="content-container">
+                <span id="greeting">Hello I am</span>
+                <h1 id="name"><span id="coloredName">Gedeon</span> Lenz</h1>
+                <p id="welcome-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <ul class="social-media">
+                    <li><a href="https://instagram.com/gedeonlenz" target="_blank"><img width="30" height="30" alt="instagram icon" src="./res/icons/instagram.svg"></a></li>
+                    <li><a href="https://twitter.com/gedeonlenz" target="_blank"><img width="30" height="30" alt="x icon" src="./res/icons/x.svg"></a></li>
+                    <li><a href="https://facebook.com/gedeonlenz" target="_blank"><img width="30" height="30" alt="facebook icon" src="./res/icons/facebook.svg"></a></li>
+                    <li><a href="https://www.linkedin.com/in/gedeonlenz" target="_blank"><img width="30" height="30" alt="linkedin icon" src="./res/icons/linkedin.svg"></a></li>
+                    <li><a href="https://github.com/GedeonLenz" target="_blank"><img width="30" height="30" alt="github icon" src="./res/icons/github.svg"></a></li>
+                    <li><a href="mailto:trash@gedeonlenz.com?subject=%5BPortfolio%5D%20Request"><img width="30" height="30" alt="mail icon" src="./res/icons/mail.svg"></a></li>
+                </ul>
+            </div>
+            <!--Image src: https://unsplash.com/photos/girl-using-desktop-computer-in-room-CZ9AjMGKIFI?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash-->
+        </section>
+        <section id="aboutme" class="content-container">
+            <h2>About me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <div class="portrait-wrapper">
+                <picture>
+                    <source srcset="https://ik.imagekit.io/bq2rndp7u/person.jpg?tr=w-200,h-200" media="(min-width:650px)">
+                    <source srcset="https://ik.imagekit.io/bq2rndp7u/person.jpg?tr=w-200,h-200" media="(min-width:1px)">
+                    <img width="200" height="200" src="https://ik.imagekit.io/bq2rndp7u/person.jpg?tr=w-200,h-200" alt="portrait of person">
+                    <!--Image src: https://unsplash.com/photos/smiling-woman-wearing-white-and-black-pinstriped-collared-top-QXevDflbl8A?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash-->
+                </picture>
             </div>
         </section>
-        <section id="aboutme">
-
+        <section id="skills" class="content-container">
+            <h2>Experience</h2>
+            <p>I am a very skilled developer. My skills include but are not limited to</p>
+            <ul>
+                <li>
+                    <img src="./res/icons/html.svg" alt="skill icon for html">
+                    <span>HTML5 Specialist</span>
+                </li>
+                <li>
+                    <img src="./res/icons/css.svg" alt="skill icon for css">
+                    <span>CSS3 Expert</span>
+                </li>
+                <li>
+                    <img src="./res/icons/js.svg" alt="skill icon for js">
+                    <span>JavaScript God</span>
+                </li>
+            </ul>
         </section>
-        <section id="projects">
-
+        <section id="projects" class="content-container">
+            <h2>Projects</h2>
+            <div class="project-container">
+                <a href="https://example.com" target="_blank">
+                    <article>
+                    <picture>
+                        <source srcset="https://ik.imagekit.io/bq2rndp7u/p1.jpg?tr=w-300,h-200" media="(min-width:650px)">
+                        <source srcset="https://ik.imagekit.io/bq2rndp7u/p1.jpg?tr=w-200,h-200" media="(min-width:1px)">
+                        <img width="300" height="300" src="https://ik.imagekit.io/bq2rndp7u/p1.jpg?tr=w-300,h-300" alt="cover image for project">
+                        <!--Image src: https://unsplash.com/photos/assorted-color-abstract-painting-tZc3vjPCk-Q?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash-->
+                    </picture>
+                    <h3>Design Webapp</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </article>
+                </a>
+                <a href="https://example.com" target="_blank">
+                    <article>
+                        <picture>
+                            <source srcset="https://ik.imagekit.io/bq2rndp7u/p2.jpg?tr=w-300,h-200" media="(min-width:650px)">
+                            <source srcset="https://ik.imagekit.io/bq2rndp7u/p2.jpg?tr=w-200,h-200" media="(min-width:1px)">
+                            <img width="300" height="300" src="https://ik.imagekit.io/bq2rndp7u/p1.jpg?tr=w-300,h-300" alt="cover image for project">
+                            <!--Image src: https://unsplash.com/photos/assorted-color-abstract-painting-tZc3vjPCk-Q?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash-->
+                        </picture>
+                        <h3>Management API</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </article>
+                </a>
+                <a href="https://example.com" target="_blank">
+                    <article>
+                        <picture>
+                            <source srcset="https://ik.imagekit.io/bq2rndp7u/p3.jpg?tr=w-300,h-200" media="(min-width:650px)">
+                            <source srcset="https://ik.imagekit.io/bq2rndp7u/p3.jpg?tr=w-200,h-200" media="(min-width:1px)">
+                            <img width="300" height="300" src="https://ik.imagekit.io/bq2rndp7u/p1.jpg?tr=w-300,h-300" alt="cover image for project">
+                            <!--Image src: https://unsplash.com/photos/assorted-color-abstract-painting-tZc3vjPCk-Q?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash-->
+                        </picture>
+                        <h3>LED Controller</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </article>
+                </a>
+                <a href="https://example.com" target="_blank">
+                    <article>
+                        <picture>
+                            <source srcset="https://ik.imagekit.io/bq2rndp7u/p4.jpg?tr=w-300,h-200" media="(min-width:650px)">
+                            <source srcset="https://ik.imagekit.io/bq2rndp7u/p4.jpg?tr=w-200,h-200" media="(min-width:1px)">
+                            <img width="300" height="300" src="https://ik.imagekit.io/bq2rndp7u/p1.jpg?tr=w-300,h-300" alt="cover image for project">
+                            <!--Image src: https://unsplash.com/photos/assorted-color-abstract-painting-tZc3vjPCk-Q?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash-->
+                        </picture>
+                        <h3>Remote Work Client</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </article>
+                </a>
+                <a href="https://example.com" target="_blank">
+                    <article>
+                        <picture>
+                            <source srcset="https://ik.imagekit.io/bq2rndp7u/p5.jpg?tr=w-300,h-200" media="(min-width:650px)">
+                            <source srcset="https://ik.imagekit.io/bq2rndp7u/p5.jpg?tr=w-200,h-200" media="(min-width:1px)">
+                            <img width="300" height="300" src="https://ik.imagekit.io/bq2rndp7u/p1.jpg?tr=w-300,h-300" alt="cover image for project">
+                            <!--Image src: https://unsplash.com/photos/assorted-color-abstract-painting-tZc3vjPCk-Q?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash-->
+                        </picture>
+                        <h3>Crypto Trading Platform</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </article>
+                </a>
+                <a href="https://example.com" target="_blank">
+                    <article>
+                        <picture>
+                            <source srcset="https://ik.imagekit.io/bq2rndp7u/p6.jpg?tr=w-300,h-200" media="(min-width:650px)">
+                            <source srcset="https://ik.imagekit.io/bq2rndp7u/p6.jpg?tr=w-200,h-200" media="(min-width:1px)">
+                            <img width="300" height="300" src="https://ik.imagekit.io/bq2rndp7u/p1.jpg?tr=w-300,h-300" alt="cover image for project">
+                            <!--Image src: https://unsplash.com/photos/assorted-color-abstract-painting-tZc3vjPCk-Q?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash-->
+                        </picture>
+                        <h3>Human Robot</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </article>
+                </a>
+            </div>
         </section>
-        <section id="contact">
-
+        <section id="contact" class="content-container">
+            <h2>Contact me</h2>
+            <form action="/contactform" method="POST">
+                <input id=fullname" name="fullname" type="text" placeholder="Full name">
+                <input id=email" name="email" type="email" placeholder="E-Mail">
+                <select id="topic" name="topic">
+                    <option value="placeholder">Choose topic</option>
+                    <option value="private">Private request</option>
+                    <option value="business">Business request</option>
+                </select><br>
+                <textarea id=message" name="message" placeholder="Your message"></textarea>
+                <button type="submit">Send message</button>
+            </form>
         </section>
     </main>
     <footer>
-
+        <div class="initials">GL</div>
+        <p>Thanks for visiting my site!</p>
+        <ul class="social-media">
+            <li><a href="https://instagram.com/gedeonlenz" target="_blank"><img width="30" height="30" alt="instagram icon" src="./res/icons/instagram.svg"></a></li>
+            <li><a href="https://twitter.com/gedeonlenz" target="_blank"><img width="30" height="30" alt="x icon" src="./res/icons/x.svg"></a></li>
+            <li><a href="https://facebook.com/gedeonlenz" target="_blank"><img width="30" height="30" alt="facebook icon" src="./res/icons/facebook.svg"></a></li>
+            <li><a href="https://www.linkedin.com/in/gedeonlenz" target="_blank"><img width="30" height="30" alt="linkedin icon" src="./res/icons/linkedin.svg"></a></li>
+            <li><a href="https://github.com/GedeonLenz" target="_blank"><img width="30" height="30" alt="github icon" src="./res/icons/github.svg"></a></li>
+            <li><a href="mailto:trash@gedeonlenz.com?subject=%5BPortfolio%5D%20Request"><img width="30" height="30" alt="mail icon" src="./res/icons/mail.svg"></a></li>
+        </ul>
+        <nav>
+            <a href="./legalnotice.html">Legal notice</a>
+            <a href="./privacypolicy.html">Privacy policy</a>
+        </nav>
     </footer>
 </body>
 </html>

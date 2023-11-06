@@ -44,7 +44,7 @@ header {
     box-sizing: border-box;
     padding: 5px 50px;
     width: 100%;
-    height: 65px;
+    min-height: 65px;
     line-height: 55px;
     overflow: hidden;
     background: #ffffff;
@@ -53,7 +53,11 @@ header {
     z-index: 9;
 }
 
-header #initials {
+.initials {
+    cursor: default;
+}
+
+header .initials {
     flex-grow: 1;
     flex-shrink: 1;
 
@@ -76,7 +80,7 @@ header nav {
     flex-direction: row;
     position: relative;
 
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-align: right;
 
     /*Nested CSS*/
@@ -88,13 +92,27 @@ header nav {
         line-height: 40px;
         margin-left: 10px;
         margin-right: 10px;
+        transition: 0.3s;
+        font-weight: 500;
+    }
+    .nav-item:hover {
+        color: var(--highlight-color,#ffb200);
     }
 }
 
 /*CSS for Main*/
 
+/*Section headings*/
+h2 {
+    display: block;
+    position: relative;
+    font-size: 2.5rem;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
 /*Section HOME*/
-#parallax-image-background-container {
+.parallax-image-background-container {
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)),url("https://ik.imagekit.io/bq2rndp7u/coverimage_compressed.jpg");
     height: 100vh;
     background-attachment: fixed;
@@ -106,9 +124,11 @@ header nav {
 .content-container {
     display: block;
     position: relative;
-    padding-left: 180px;
+    padding-left: 10vw;
+    padding-right: 10vw;
     text-align: left;
 }
+
 
 #welcome {
     display: block;
@@ -138,11 +158,10 @@ header nav {
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    animation: move-bg 60s infinite linear;
+    animation: backgroundMovement 60s infinite linear;
     transition: 0.3s;
-
 }
-@keyframes move-bg {
+@keyframes backgroundMovement {
     to {
         background-position: 950px 0;
     }
@@ -151,12 +170,15 @@ header nav {
     filter:brightness(1.1);
 }
 
+#welcome .social-media {
+    margin-top: 50px;
+}
+
 .social-media {
     display: block;
     position: relative;
     width: auto;
     height: 50px;
-    margin-top: 50px;
 }
 
 .social-media li {
@@ -169,12 +191,392 @@ header nav {
 }
 .social-media li img {
     filter: invert(1);
+    transition: 0.3s;
 }
+.social-media li img:hover {
+    filter: invert(0.8);
+}
+
+/*Section ABOUT ME*/
 
 #aboutme {
     display: block;
     position: relative;
-    height: 10000px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#aboutme h2+p {
+    display: inline-block;
+    width: 70%;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    vertical-align: top;
+}
+
+.portrait-wrapper {
+    display: inline-block;
+    position: relative;
+    width: calc(30% - 5px);
+    vertical-align: middle;
+}
+#aboutme picture {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    box-sizing: border-box;
+    border-radius: 1000px;
+    overflow: hidden;
+    border: 3px solid #f5f5f5;
+    box-shadow: 5px 5px 40px 0 rgba(0,0,0,0.2);
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#skills {
+    display: block;
+    position: relative;
+    background: #262626;
+    background: linear-gradient(90deg, #ffb200, #ff0000, #ffb200) 0 0 / 2000px 1000px;
+    animation: sectionBackgroundMovement 60s infinite linear;
+    transition: 0.3s;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    color: #ffffff;
+}
+@keyframes sectionBackgroundMovement {
+    to {
+        background-position: 2000px 0;
+    }
+}
+
+#skills ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#skills ul li {
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+#skills ul li img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#skills ul li span {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/*Section skills */
+#skills {
+    margin-top: 50px;
+}
+
+#skills h2 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#skills h2+p {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+#projects h2, #contact h2 {
+    margin-top: 60px;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /*display: grid;
+    grid-template-columns: 1fr 1fr 1fr;*/
+    row-gap: 2vw;
+    margin-bottom: 50px;
+}
+
+/*Section Projects*/
+article {
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    height: 300px;
+    box-shadow: 5px 5px 40px 0 rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transform: scale(1.0);
+    transition: 0.3s;
+    margin: 10px;
+}
+
+article:hover {
+    transform: scale(1.03);
+}
+
+article h3 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 20px;
+    font-size: 1.2rem;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+article p {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+article img {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+
+/*Section Contact*/
+#contact {
+    text-align: center;
+}
+form {
+    display: block;
+    position: relative;
+    font-size: 1rem;
+    padding-bottom: 50px;
+}
+
+legend {
+    color: #3b3b3b;
+}
+label {
+    display: block;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #3b3b3b;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+input, select, textarea {
+    display: block;
+    position: relative;
+    height: 40px;
+    border-radius: 8px;
+    background: #f5f5f5;
+    padding-left: 10px;
+    outline: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+textarea {
+    padding-top: 10px;
+    box-sizing: border-box;
+    height: 200px;
+    resize: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+button {
+    display: block;
+    position: relative;
+    width: auto;
+    height: 40px;
+    color: #ffffff;
+    background: var(--highlight-color,#ffb200);
+    border-radius: 100px;
+    padding: 8px 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.03);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
 }
 
 /*CSS for Footer*/
+/*Ue of scoped CSS*/
+@scope (footer) {
+    :scope {
+        display: block;
+        position: relative;
+        background: #3b3b3b;
+        height: 130px;
+        text-align: center;
+        color: #ffffff;
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    .initials {
+        display: block;
+        position: relative;
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: 2rem;
+    }
+    p {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+    .social-media {
+        margin-top: 5px;
+        height: 15px;
+        margin-bottom: 20px;
+    }
+    .social-media li {
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .social-media img {
+        width: 15px;
+        height: 15px;
+    }
+    nav {
+        display: block;
+    }
+    nav a {
+        display: inline-block;
+        position: relative;
+        width: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: var(--highlight-color,#ffb200);
+    }
+}
+
+#menu {
+    display: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*Mobile Adjustments*/
+@media (max-width: 550px) {
+    header {
+        padding-bottom: 0;
+        display: block;
+    }
+    .initials {
+        height: 65px;
+        line-height: 65px;
+        margin-right: calc(100% - 55px - 20px);
+    }
+    header nav {
+        display: none;
+    }
+    header nav.activeNav {
+        display: block;
+    }
+    header nav ul {
+        display: block;
+        position: relative;
+        width: 100%;
+        padding-bottom: 15px;
+    }
+    header nav .nav-item {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+    }
+    #menu {
+        display: inline-block;
+        position: relative;
+        margin-left:auto;
+        vertical-align: middle;
+        margin-bottom: -3px;
+    }
+    nav {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 715px) {
+    input,select,textarea {
+        width: 100%;
+    }
+    #skills ul li span {
+        font-size: 0.8rem;
+    }
+    #skills h2+p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .content-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #welcome-text {
+        max-width: 80vw;
+    }
+    #name{
+        font-size: 3rem;
+    }
+    #greeting {
+        font-size: 1.5rem;
+    }
+    #aboutme p {
+        max-width: 100vw;
+    }
+}
+
+@media (max-width: 1400px) {
+    #aboutme h2+p {
+        width: 100%;
+    }
+    #aboutme picture {
+        display: none;
+    }
+    #skills ul {
+        max-width: 100%;
+    }
+}
