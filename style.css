@@ -28,6 +28,13 @@ body {
     color: var(--base-color, #3b3b3b) /*Use of variable with fallbacks*/
 }
 
+::selection{
+    background: rgba(255, 178, 0, 0.75);
+}
+::-moz-selection {
+    background: rgba(255, 178, 0, 0.75);
+}
+
 a {
     color: inherit;
 }
@@ -53,11 +60,11 @@ header {
     z-index: 9;
 }
 
-.initials {
+initials-gl {
     cursor: default;
 }
 
-header .initials {
+header initials-gl {
     flex-grow: 1;
     flex-shrink: 1;
 
@@ -323,7 +330,8 @@ h2 {
 article {
     display: inline-block;
     position: relative;
-    width: 400px;
+    max-width: 400px;
+    width: calc(100% - 20px - 20px);
     height: 300px;
     box-shadow: 5px 5px 40px 0 rgba(0,0,0,0.1);
     border-radius: 10px;
@@ -449,7 +457,7 @@ button {
         padding-top: 30px;
         padding-bottom: 20px;
     }
-    .initials {
+    initials-gl {
         display: block;
         position: relative;
         width: 100%;
@@ -486,7 +494,7 @@ button {
     }
 }
 
-#menu {
+#menu_wrapper {
     display: none;
     cursor: pointer;
     width: 20px;
@@ -496,13 +504,27 @@ button {
     transform: translateY(-50%);
 }
 
+#menu, #menu_check {
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
+#menu_check {
+    opacity: 0;
+    cursor: pointer;
+}
+
 /*Mobile Adjustments*/
 @media (max-width: 550px) {
     header {
         padding-bottom: 0;
         display: block;
     }
-    .initials {
+    initials-gl {
         height: 65px;
         line-height: 65px;
         margin-right: calc(100% - 55px - 20px);
@@ -510,7 +532,12 @@ button {
     header nav {
         display: none;
     }
-    header nav.activeNav {
+    #menucheck {
+        display: block;
+        position: absolute;
+        visibility: hidden;
+    }
+    #menu_wrapper:has(> #menu_check:checked) ~ nav {
         display: block;
     }
     header nav ul {
@@ -525,7 +552,7 @@ button {
         text-align: left;
         margin-left: 0;
     }
-    #menu {
+    #menu_wrapper {
         display: inline-block;
         position: relative;
         margin-left:auto;
@@ -534,6 +561,12 @@ button {
     }
     nav {
         flex-direction: column;
+    }
+    footer {
+        height: 165px !important;
+    }
+    #skills {
+        margin-top: 20px;
     }
 }
 

@@ -8,26 +8,17 @@
 </head>
 <body>
     <header>
-        <div class="initials">GL</div>
-        <script>
-            /*Necessary for burger menu to work. Burger menu part of task...*/
-            function toggleMenu() {
-                document.getElementById('topnav').classList.contains('activeNav') ? hideMenu() : showMenu()
-            }
-            function showMenu() {
-                document.getElementById('topnav').classList.add('activeNav')
-            }
-            function hideMenu() {
-                document.getElementById('topnav').classList.remove('activeNav');
-            }
-        </script>
-        <img onclick="toggleMenu()" id="menu" width="20" height="20" alt="menu icon" src="./res/icons/menu.svg">
+        <initials-gl>GL</initials-gl>
+        <div id="menu_wrapper">
+            <img id="menu" width="20" height="20" alt="menu icon" src="./res/icons/menu.svg">
+            <input id="menu_check" type="checkbox">
+        </div>
         <nav id="topnav">
             <ul>
-                <li onclick="hideMenu()" class="nav-item"><a href="#home">Home</a></li>
-                <li onclick="hideMenu()" class="nav-item"><a href="#aboutme">About me</a></li>
-                <li onclick="hideMenu()" class="nav-item"><a href="#projects">Projects</a></li>
-                <li onclick="hideMenu()" class="nav-item"><a href="#contact">Contact me</a></li>
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item"><a href="#aboutme">About me</a></li>
+                <li class="nav-item"><a href="#projects">Projects</a></li>
+                <li class="nav-item"><a href="#contact">Contact me</a></li>
             </ul>
         </nav>
     </header>
@@ -171,7 +162,7 @@
         </section>
     </main>
     <footer>
-        <div class="initials">GL</div>
+        <initials-gl>GL</initials-gl>
         <p>Thanks for visiting my site!</p>
         <ul class="social-media">
             <li><a href="https://instagram.com/gedeonlenz" target="_blank"><img width="30" height="30" alt="instagram icon" src="./res/icons/instagram.svg"></a></li>
