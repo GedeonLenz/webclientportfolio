@@ -3,6 +3,7 @@
 /*Custom font*/
 @font-face {
     font-family: Nunito;
+    font-display: swap; /*To use system font while loading*/
     src: url(./res/fonts/Nunito-SemiBold.ttf);
 }
 
@@ -426,7 +427,7 @@ input:focus {
     width: auto;
     height: 40px;
     color: #ffffff;
-    background: var(--highlight-color,#ffb200);
+    background: color-mix(in oklch, color(display-p3 0.95539, 0.71087, 0.24606), rgb(10 10 10) 36%); /*Use of wider gamut color mix*/
     border-radius: 100px;
     padding: 8px 25px;
     font-size: 1rem;

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta name="description" content="Portfolio site of Gedeon Lenz">
     <title>Gedeon Lenz - Portfolio</title>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -11,7 +12,7 @@
         <initials-gl>GL</initials-gl>
         <div id="menu_wrapper">
             <img id="menu" width="20" height="20" alt="menu icon" src="./res/icons/menu.svg">
-            <input id="menu_check" type="checkbox">
+            <input aria-label="open menu checkbox" id="menu_check" type="checkbox">
         </div>
         <nav id="topnav">
             <ul>
@@ -161,14 +162,14 @@
         <section id="contact" class="content-container">
             <h2>Contact me</h2>
             <form action="/contactform" method="POST">
-                <input id="fullname" name="fullname" type="text" placeholder="Full name">
-                <input id="email" name="email" type="email" placeholder="E-Mail">
-                <select id="topic" name="topic">
+                <input aria-label="full name" id="fullname" name="fullname" type="text" placeholder="Full name">
+                <input aria-label="email" id="email" name="email" type="email" placeholder="E-Mail">
+                <select aria-label="topic" id="topic" name="topic">
                     <option value="placeholder">Choose topic</option>
                     <option value="private">Private request</option>
                     <option value="business">Business request</option>
                 </select><br>
-                <textarea id="message" name="message" placeholder="Your message"></textarea>
+                <textarea aria-label="message" id="message" name="message" placeholder="Your message"></textarea>
                 <button type="submit">Send message</button>
             </form>
         </section>

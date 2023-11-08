@@ -1,4 +1,4 @@
 :root {
     --base-color: #3b3b3b; /*Creation of custom variable*/
-    --highlight-color: #ffb200;
+    --highlight-color: color(display-p3 0.95539, 0.71087, 0.24606); /*Use of wider gamut color (equivalent to #ffb200)*/
 }
