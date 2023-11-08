@@ -162,14 +162,14 @@
         <section id="contact" class="content_container">
             <h2>Contact me</h2>
             <form action="/contactform" method="POST">
-                <input aria-label="full name" id="fullname" name="fullname" type="text" placeholder="Full name">
-                <input aria-label="email" id="email" name="email" type="email" placeholder="E-Mail">
-                <select aria-label="topic" id="topic" name="topic">
-                    <option value="placeholder">Choose topic</option>
+                <input aria-label="full name" id="fullname" name="fullname" type="text" placeholder="Full name" required>
+                <input aria-label="email" id="email" name="email" type="email" placeholder="E-Mail" required>
+                <select aria-label="topic" id="topic" name="topic" required>
+                    <option value="" disabled selected>Choose topic</option>
                     <option value="private">Private request</option>
                     <option value="business">Business request</option>
                 </select><br>
-                <textarea aria-label="message" id="message" name="message" placeholder="Your message"></textarea>
+                <textarea aria-label="message" id="message" name="message" placeholder="Your message" required></textarea>
                 <button type="submit">Send message</button>
             </form>
         </section>
