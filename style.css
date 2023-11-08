@@ -323,8 +323,6 @@ h2 {
     justify-content: space-evenly;
     row-gap: 2vw;
     margin-bottom: 50px;
-}
-#project_container li {
     list-style-type: none;
 }
 
@@ -427,6 +425,7 @@ input:focus {
     width: auto;
     height: 40px;
     color: #ffffff;
+    background: #A8672F; /*Fallback for firefox and others not supporting color-mix*/
     background: color-mix(in oklch, color(display-p3 0.95539, 0.71087, 0.24606), rgb(10 10 10) 36%); /*Use of wider gamut color mix*/
     border-radius: 100px;
     padding: 8px 25px;
@@ -445,7 +444,55 @@ input:focus {
 }
 
 /*CSS for Footer*/
-/*Ue of scoped CSS*/
+/*Fallback for browsers not supporting scoped css*/
+footer {
+    display: block;
+    position: relative;
+    background: var(--base-color,#3b3b3b);
+    height: 130px;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+footer initials-gl {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+footer p {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+footer .socialmedia {
+    margin-top: 5px;
+    height: 15px;
+    margin-bottom: 20px;
+}
+footer .socialmedia li {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+footer .socialmedia img {
+    width: 15px;
+    height: 15px;
+}
+footer nav {
+    display: block;
+}
+footer nav a {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: var(--highlight-color,#ffb200);
+}
+/*End of fallback*/
+
+/*Ue of scoped CSS (Extra credit)*/
 @scope (footer) {
     :scope {
         display: block;
@@ -537,7 +584,7 @@ input:focus {
         position: absolute;
         visibility: hidden;
     }
-    #menu_wrapper:has(> #menu_check:checked) ~ nav {
+    #menu_wrapper:has(> #menu_check:checked) ~ nav { /*Use of has selector*/
         display: block;
     }
     header nav ul {
@@ -545,6 +592,7 @@ input:focus {
         position: relative;
         width: 100%;
         padding-bottom: 15px;
+        list-style-type: none;
     }
     header nav .nav_item {
         display: block;
