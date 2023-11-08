@@ -412,6 +412,9 @@ input, select, textarea {
     width: 650px;
     box-sizing: border-box;
     margin-bottom: 15px;
+}
+
+select {
     -webkit-appearance: none;
 }
 
