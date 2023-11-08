@@ -92,7 +92,7 @@ header nav {
     text-align: right;
 
     /*Nested CSS*/
-    .nav-item {
+    .nav_item {
         display: inline-block;
         position: relative;
         width: auto;
@@ -103,7 +103,7 @@ header nav {
         transition: 0.3s;
         font-weight: 500;
     }
-    .nav-item:hover {
+    .nav_item:hover {
         color: var(--highlight-color,#ffb200);
     }
 }
@@ -120,7 +120,7 @@ h2 {
 }
 
 /*Section HOME*/
-.parallax-image-background-container {
+.parallax_image_background_container {
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)),url("https://ik.imagekit.io/bq2rndp7u/coverimage_compressed.jpg");
     height: 100vh;
     background-attachment: fixed;
@@ -129,7 +129,7 @@ h2 {
     background-size: cover;
 }
 
-.content-container {
+.content_container {
     display: block;
     position: relative;
     padding-left: 10vw;
@@ -161,7 +161,7 @@ h2 {
 #name {
     font-size: 5rem;
 }
-#coloredName {
+#colored_name {
     background: linear-gradient(90deg, #ffb200, #ff0000, #ffb200) 0 0 / 950px 1000px;
     color: transparent;
     background-clip: text;
@@ -174,7 +174,7 @@ h2 {
         background-position: 950px 0;
     }
 }
-#coloredName:hover {
+#colored_name:hover {
     filter:brightness(1.1);
 }
 
@@ -316,7 +316,7 @@ h2 {
     margin-top: 60px;
 }
 
-#project-container {
+#project_container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -324,7 +324,7 @@ h2 {
     row-gap: 2vw;
     margin-bottom: 50px;
 }
-#project-container li {
+#project_container li {
     list-style-type: none;
 }
 
@@ -546,7 +546,7 @@ input:focus {
         width: 100%;
         padding-bottom: 15px;
     }
-    header nav .nav-item {
+    header nav .nav_item {
         display: block;
         width: 100%;
         text-align: left;
@@ -583,7 +583,7 @@ input:focus {
 }
 
 @media (max-width: 875px) {
-    .content-container {
+    .content_container {
         padding-left: 20px;
         padding-right: 20px;
     }
