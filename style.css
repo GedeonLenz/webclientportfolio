@@ -15,7 +15,7 @@
     text-decoration: none;
 }
 
-/*General element property changes*/
+/*General changes*/
 
 html {
     scroll-behavior: smooth;
@@ -145,7 +145,7 @@ h2 {
     font-size: 2rem;
     color: #ffffff;
 }
-#welcome-text {
+#welcome_text {
     display: block;
     position: relative;
     max-width: 40vw;
@@ -177,18 +177,18 @@ h2 {
     filter:brightness(1.1);
 }
 
-#welcome .social-media {
+#welcome .socialmedia {
     margin-top: 50px;
 }
 
-.social-media {
+.socialmedia {
     display: block;
     position: relative;
     width: auto;
     height: 50px;
 }
 
-.social-media li {
+.socialmedia li {
     display: inline-block;
     position: relative;
     width: 30px;
@@ -196,11 +196,11 @@ h2 {
     margin-left: 5px;
     margin-right: 5px;
 }
-.social-media li img {
+.socialmedia li img {
     filter: invert(1);
     transition: 0.3s;
 }
-.social-media li img:hover {
+.socialmedia li img:hover {
     filter: invert(0.8);
 }
 
@@ -232,6 +232,7 @@ h2 {
     width: 200px;
     height: 200px;
     object-fit: cover;
+    object-position: center;
     box-sizing: border-box;
     border-radius: 1000px;
     overflow: hidden;
@@ -244,7 +245,6 @@ h2 {
 #skills {
     display: block;
     position: relative;
-    background: #262626;
     background: linear-gradient(90deg, #ffb200, #ff0000, #ffb200) 0 0 / 2000px 1000px;
     animation: sectionBackgroundMovement 60s infinite linear;
     transition: 0.3s;
@@ -315,15 +315,16 @@ h2 {
     margin-top: 60px;
 }
 
-.project-container {
+#project-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    /*display: grid;
-    grid-template-columns: 1fr 1fr 1fr;*/
     row-gap: 2vw;
     margin-bottom: 50px;
+}
+#project-container li {
+    list-style-type: none;
 }
 
 /*Section Projects*/
@@ -373,9 +374,9 @@ article img {
     width: 100%;
     height: 150px;
     object-fit: cover;
+    object-position: center;
     overflow: hidden;
 }
-
 
 /*Section Contact*/
 #contact {
@@ -388,17 +389,6 @@ form {
     padding-bottom: 50px;
 }
 
-legend {
-    color: #3b3b3b;
-}
-label {
-    display: block;
-    font-weight: 500;
-    font-size: 0.8rem;
-    color: #3b3b3b;
-    margin-bottom: 10px;
-    margin-top: 20px;
-}
 input, select, textarea {
     display: block;
     position: relative;
@@ -430,7 +420,7 @@ input:focus {
 }
 
 
-button {
+#contact button {
     display: block;
     position: relative;
     width: auto;
@@ -446,6 +436,11 @@ button {
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
+    transform: scale(1);
+    transition: 0.3s;
+}
+#contact button:hover {
+    transform: scale(1.02);
 }
 
 /*CSS for Footer*/
@@ -454,7 +449,7 @@ button {
     :scope {
         display: block;
         position: relative;
-        background: #3b3b3b;
+        background: var(--base-color,#3b3b3b);
         height: 130px;
         text-align: center;
         color: #ffffff;
@@ -472,16 +467,16 @@ button {
         font-size: 0.8rem;
         margin-bottom: 15px;
     }
-    .social-media {
+    .socialmedia {
         margin-top: 5px;
         height: 15px;
         margin-bottom: 20px;
     }
-    .social-media li {
+    .socialmedia li {
         margin-left: 2px;
         margin-right: 2px;
     }
-    .social-media img {
+    .socialmedia img {
         width: 15px;
         height: 15px;
     }
@@ -586,12 +581,15 @@ button {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 875px) {
     .content-container {
         padding-left: 20px;
         padding-right: 20px;
     }
-    #welcome-text {
+}
+
+@media (max-width: 900px) {
+    #welcome_text {
         max-width: 80vw;
     }
     #name{
